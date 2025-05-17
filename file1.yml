@@ -1,0 +1,9 @@
+---
+- name: Print a name using Ansible
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Print my name
+      debug:
+        msg: "My name is Prathamesh"
