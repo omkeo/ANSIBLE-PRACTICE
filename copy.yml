@@ -1,0 +1,16 @@
+---
+- name: Create a file in /mnt and copy it to /media
+  hosts: localhost
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: Create a file in /mnt
+      copy:
+        content: "This is a sample file created by Ansible."
+        dest: /mnt/sample.txt
+
+    - name: Copy the file from /mnt to /media
+      copy:
+        src: /mnt/sample.txt
+        dest: /media/sample.txt
