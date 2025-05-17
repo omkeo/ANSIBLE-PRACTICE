@@ -1,0 +1,16 @@
+---
+- name: Install Nginx and print Omkar
+  hosts: localhost
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Print Omkar
+      debug:
+        msg: "Omkar"
